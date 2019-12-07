@@ -43,7 +43,7 @@ SCSS input
 }
 ```
 
-// CSS output
+CSS output
 ```css
 .test {
   position: relative;
