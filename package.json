@@ -1,0 +1,13 @@
+{
+  "name": "px-to-rem",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node-sass --output=dist --output-style=expanded src",
+    "prestart": "npm run build",
+    "start": "npm run build -- --watch"
+  },
+  "private": true,
+  "dependencies": {
+    "node-sass": "^4.13.0"
+  }
+}

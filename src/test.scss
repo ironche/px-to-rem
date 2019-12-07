@@ -1,0 +1,38 @@
+@import "px-to-rem";
+
+.test {
+  position: relative;
+  /*
+    All units are going to be stripped, as it is assumed that px are used
+
+    margin: px-to-rem(16px 20 24rem 32%);
+  */
+  margin: px-to-rem(16px 20 24rem 32%);
+  /*
+    Single value is also permitted
+
+    border: px-to-rem(2) solid black;
+  */
+  border: px-to-rem(2) solid black;
+  /*
+    Variables may be passed
+
+    $gutter: 40px 44px 100px;
+    padding: px-to-rem($gutter);
+  */
+  $gutter: 40px 44px 100px;
+  padding: px-to-rem($gutter);
+  /*
+    When base size is different from 16px
+
+    top: px-to-rem(320, 10);
+  */
+  top: px-to-rem(320, 10);
+  /*
+    Neither of the following are allowed
+
+    right: px-to-rem(());          // empty list
+    bottom: px-to-rem();           // no arguments
+    left: px-to-rem([40px, 50px]); // comma separated list
+  */
+}

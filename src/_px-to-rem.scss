@@ -1,0 +1,23 @@
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function px-to-rem($values, $baseSize: 16) {
+  $remValues: ();
+  $baseSize: strip-unit($baseSize);
+
+  @if not length($values) {
+    @error 'List cannot be empty.';
+  }
+  @if list-separator($values) == 'comma' {
+    @error 'Only space separated list is allowed.';
+  }
+
+  @each $val in $values {
+    $remValues: append($remValues, strip-unit($val) / $baseSize * 1rem);
+  }
+  @return $remValues;
+}
